@@ -1,0 +1,12 @@
+{
+  "name": "first_api",
+  "version": "1.0.0",
+  "description": "Primeira API",
+  "main": "index.js",
+  "scripts": {},
+  "author": "Straforini",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.1"
+  }
+}
