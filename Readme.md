@@ -31,3 +31,7 @@ Esta API permite adicionar e listar usuários utilizando os métodos HTTP `GET` 
    ```bash
    git clone https://github.com/seu-usuario/user-management-api.git
    cd user-management-api
+
+2. Instale as dependências:
+
+npm install
