@@ -6,27 +6,23 @@ const prisma = new PrismaClient()
 const app = express()
 app.use(express.json())
 
-const users = []
 
-app.post ('/usuarios', (req, res) => {
+ app.post ('/usuarios', async (req, res) => {
 
-    prisma.user.create({
+     await prisma.user.create({
         data: {
             name: req.body.name,
-            numberuser: req.body.numberuser
         }
-    }).then(user => {
-        res.json(user)
-    }).catch(err => {
-        res.json({error: 'Ocorreu um erro ao criar o usuário'})
+
     })
 
-
-    res.send("Salve Parça")
+    res.status(201).json(req.body)
 })
 
-app.get('/usuarios', (req, res) => {
-    res.json(users)
+app.get('/usuarios', async(req, res) => {
+
+    const user = await prisma.user.findMany()
+    res.json(200).json(user)
 })
 
 app.listen(2001)
